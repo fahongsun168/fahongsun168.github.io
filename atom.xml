@@ -41,14 +41,14 @@
     <link href="http://yoursite.com/2014/05/07/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
     <id>http://yoursite.com/2014/05/07/新的开始/</id>
     <published>2014-05-07T10:44:12.000Z</published>
-    <updated>2015-03-18T13:03:27.000Z</updated>
+    <updated>2015-03-18T13:04:50.000Z</updated>
     <content type="html"><![CDATA[<p>这是<strong>新的开始</strong>，我用hexo创建了第一篇文章。</p>
-<p>通过下面的命令，就可以创建新文章<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\workspace</span><span class="command">\javascript</span><span class="command">\nodejs</span>-hexo&gt;hexo new 新的开始</span><br><span class="line"><span class="special">[</span>info<span class="special">]</span> File created at D:<span class="command">\workspace</span><span class="command">\javascript</span><span class="command">\nodejs</span>-hexo<span class="command">\source</span><span class="command">\_</span>posts<span class="command">\新</span>的开始.md</span><br><span class="line">D:<span class="command">\workspace</span><span class="command">\javascript</span><span class="command">\nodejs</span>-hexo&gt;hexo new 新的开始</span><br><span class="line"><span class="special">[</span>info<span class="special">]</span> File created at D:<span class="command">\workspace</span><span class="command">\javascript</span><span class="command">\nodejs</span>-hexo<span class="command">\source</span><span class="command">\_</span>posts<span class="command">\新</span>的开始.md</span><br></pre></td></tr></table></figure></p>
+<p>通过下面的命令，就可以创建新文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace\javascript\nodejs-hexo&gt;hexo new 新的开始</span><br><span class="line">[info] File created at D:\workspace\javascript\nodejs-hexo\<span class="built_in">source</span>\_posts\新的开始.md</span><br><span class="line">D:\workspace\javascript\nodejs-hexo&gt;hexo new 新的开始</span><br><span class="line">[info] File created at D:\workspace\javascript\nodejs-hexo\<span class="built_in">source</span>\_posts\新的开始.md</span><br></pre></td></tr></table></figure></p>
 <p>感觉非常好。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>这是<strong>新的开始</strong>，我用hexo创建了第一篇文章。</p>
-<p>通过下面的命令，就可以创建新文章<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span]]>
+<p>通过下面的命令，就可以创建新文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><spa]]>
     </summary>
     
       <category term="开始" scheme="http://yoursite.com/tags/%E5%BC%80%E5%A7%8B/"/>
