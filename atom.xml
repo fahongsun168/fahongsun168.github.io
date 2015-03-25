@@ -41,15 +41,15 @@
     <link href="http://yoursite.com/2014/05/07/linux_cmd/"/>
     <id>http://yoursite.com/2014/05/07/linux_cmd/</id>
     <published>2014-05-07T10:44:12.000Z</published>
-    <updated>2015-03-25T15:38:44.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="grep命令">grep命令</h1><h2 id="求交集命令">求交集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
-<h2 id="求差集命令">求差集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -v -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
-<h2 id="去重命令">去重命令</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> <span class="string">'test'</span> test.<span class="keyword">log</span> | <span class="keyword">sort</span> -rn | uniq</span><br></pre></td></tr></table></figure>
-<h1 id="sed命令">sed命令</h1><h2 id="替换文件">替换文件</h2><p>将<strong>test.log</strong>文件中的<strong>xx</strong>内容替换为<strong>yy</strong>内容：</p>
+    <updated>2015-03-25T15:51:26.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="grep命令">grep命令</h2><h3 id="求交集命令">求交集命令</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
+<h3 id="求差集命令">求差集命令</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -v -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
+<h3 id="去重命令">去重命令</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> <span class="string">'test'</span> test.<span class="keyword">log</span> | <span class="keyword">sort</span> -rn | uniq</span><br></pre></td></tr></table></figure>
+<h2 id="sed命令">sed命令</h2><h3 id="替换文件">替换文件</h3><p>将<strong>test.log</strong>文件中的<strong>xx</strong>内容替换为<strong>yy</strong>内容：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -<span class="built_in">i</span> <span class="string">'s/xx/yy/g'</span> test.<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="grep命令">grep命令</h1><h2 id="求交集命令">求交集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1]]>
+    <![CDATA[<h2 id="grep命令">grep命令</h2><h3 id="求交集命令">求交集命令</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1]]>
     </summary>
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
