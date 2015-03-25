@@ -41,17 +41,17 @@
     <link href="http://yoursite.com/2014/05/07/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
     <id>http://yoursite.com/2014/05/07/新的开始/</id>
     <published>2014-05-07T10:44:12.000Z</published>
-    <updated>2015-03-25T14:00:54.000Z</updated>
+    <updated>2015-03-25T14:49:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="11111">11111</h2><p>这是<strong>新的开始</strong>，我用hexo创建了第一篇文章。</p>
 <p>通过下面的命令，就可以创建新文章</p>
 <p>感觉非常好。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[rectangle <span class="string">setX:</span> <span class="number">10</span> <span class="string">y:</span> <span class="number">10</span> <span class="string">width:</span> <span class="number">20</span> <span class="string">height:</span> <span class="number">20</span>];</span><br><span class="line">[rectangle <span class="string">setX:</span> <span class="number">10</span> <span class="string">y:</span> <span class="number">10</span> <span class="string">width:</span> <span class="number">20</span> <span class="string">height:</span> <span class="number">20</span>];</span><br><span class="line">[rectangle <span class="string">setX:</span> <span class="number">10</span> <span class="string">y:</span> <span class="number">10</span> <span class="string">width:</span> <span class="number">20</span> <span class="string">height:</span> <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
 <h2 id="2222222">2222222</h2>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="11111">11111</h2><p>这是<strong>新的开始</strong>，我用hexo创建了第一篇文章。</p>
 <p>通过下面的命令，就可以创建新文章</p>
 <p>感觉非常好。</p>
-<figure class="highlight java"]]>
+<figure class="highlight groov]]>
     </summary>
     
       <category term="开始" scheme="http://yoursite.com/tags/%E5%BC%80%E5%A7%8B/"/>
