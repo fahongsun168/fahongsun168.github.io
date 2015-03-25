@@ -64,4 +64,25 @@
     
   </entry>
   
+  <entry>
+    <title><![CDATA[linux常用命令]]></title>
+    <link href="http://yoursite.com/2014/05/07/linux_cmd/"/>
+    <id>http://yoursite.com/2014/05/07/linux_cmd/</id>
+    <published>2014-05-07T10:44:12.000Z</published>
+    <updated>2015-03-25T15:22:36.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="grep">grep</h1><h2 id="求交集命令">求交集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
+<h2 id="求差集命令">求差集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -v -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="grep">grep</h1><h2 id="求交集命令">求交集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</sp]]>
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="命令" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+      <category term="常用命令" scheme="http://yoursite.com/categories/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
 </feed>
