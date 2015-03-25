@@ -154,7 +154,7 @@
         <h1 id="grep命令">grep命令</h1><h2 id="求交集命令">求交集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
 <h2 id="求差集命令">求差集命令</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -v -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
 <h2 id="去重命令">去重命令</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> <span class="string">'test'</span> test.<span class="keyword">log</span> | <span class="keyword">sort</span> -rn | uniq</span><br></pre></td></tr></table></figure>
-<h1 id="sed命令">sed命令</h1><h2 id="替换文件">替换文件</h2><p>将<em>test.log</em>文件中的<em>xx</em>内容替换为<em>yy</em>内容：</p>
+<h1 id="sed命令">sed命令</h1><h2 id="替换文件">替换文件</h2><p>将<strong>test.log</strong>文件中的<strong>xx</strong>内容替换为<strong>yy</strong>内容：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -<span class="built_in">i</span> <span class="string">'s/xx/yy/g'</span> test.<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
         
