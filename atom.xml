@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-03-26T16:36:31.000Z</updated>
+  <updated>2015-03-26T16:45:34.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/05/27/groovy_use/"/>
     <id>http://yoursite.com/2015/05/27/groovy_use/</id>
     <published>2015-05-26T16:35:12.000Z</published>
-    <updated>2015-03-26T16:36:31.000Z</updated>
+    <updated>2015-03-26T16:45:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="背景介绍">背景介绍</h2><pre><code>通常为了满足业务的灵活性，多采用脚本语言来满足业务多变性和灵活性。在支付宝安全风控的系统中，模型变量的定义、数据的适配均采用groovy脚本语言来设计的，当BI同学需要一个新的变量，通过一个groovy脚本语言即可定义出来。虽然运用groovy脚本语言给业务带来了比较大的灵活性和可扩展性，但如果使用不当，会存在很多潜在的风险。
 
 支付宝风控系统中，使用groovy语言的过程如下:
@@ -98,7 +98,7 @@
 
         <span class="type">Thread</span>.sleep(<span class="number">500</span>);
     }
-</code></pre><h2 id="Class对象不能被回收">Class<script>对象不能被回收</h2><pre><code>缓存<span class="keyword">Class</span>&lt;Script&gt;对象后，每次业务数据变更，业务上都需要生成新的<span class="keyword">Class</span>&lt;Script&gt;对象，perm区内存不能随着CMS GC回收掉老的<span class="keyword">Class</span>&lt;Script&gt;对象，随着多次发布，最终导致OOM问题
+</code></pre><h2 id="Class对象不能被回收">Class对象不能被回收</h2><pre><code>缓存<span class="keyword">Class</span>&lt;Script&gt;对象后，每次业务数据变更，业务上都需要生成新的<span class="keyword">Class</span>&lt;Script&gt;对象，perm区内存不能随着CMS GC回收掉老的<span class="keyword">Class</span>&lt;Script&gt;对象，随着多次发布，最终导致OOM问题
 问题原因：很可能每次在生成<span class="keyword">Class</span>&lt;Script&gt;对象时，使用了静态单例的GroovyClassLoader，这样由于老的<span class="keyword">Class</span>&lt;Script&gt;对象中的groovyClassLoader处于存活状态，导致所有不再使用的<span class="keyword">Class</span>&lt;Script&gt;对象均不能被GC 回收。
 解决方案：确保在每次更新缓存<span class="keyword">Class</span>&lt;Script&gt;对象时候，采用不同的groovyClassLoader，使老的<span class="keyword">Class</span>&lt;Script&gt;对象引用的groovyClassLoader也不在被引用。这样在CMS GC时，perm区这些<span class="keyword">Class</span>&lt;Script&gt;对象得以回收。
 
@@ -110,7 +110,7 @@
 </code></pre><h2 id="多次串行执行Groovy的性能问题">多次串行执行Groovy的性能问题</h2><pre><code>尽管缓存了<span class="keyword">Class</span>&lt;Script&gt;对象，如果一个线程中需要多次去执行多个<span class="keyword">Class</span>&lt;Script&gt;对象，还是存在perm区容量及运行性能瓶颈的问题。在支付宝风控系统模型平台中，一个模型的计算需要去执行<span class="number">600</span>个变量。此时如果采用每个变量都预先编译成单独的<span class="keyword">Class</span>&lt;Script&gt;对象，perm区大约会占用<span class="number">150</span>Mb的空间，运行这<span class="number">600</span>个变量的Groovy脚本总耗时为<span class="number">70</span>ms，很显然在perm区容量及运行性能方面都存在问题。
 
 解决方案：将多个Groovy脚本合并成一个脚本去编译和执行，当然要合理的构件合并的脚本逻辑。通过这种方法，编译这<span class="number">600</span>个变量只需要<span class="number">8</span>MB的空间，运行这<span class="number">600</span>个变量的Groovy脚本总耗时现将至<span class="number">18</span>ms。
-</code></pre></script></h2>]]></content>
+</code></pre>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="背景介绍">背景介绍</h2><pre><code>通常为了满足业务的灵活性，多采用脚本语言来满足业务多变性和灵活性。在支付宝安全风控的系统中，模型变量的定义、数据的适配均采用groovy脚本语言来设计的，当BI同学需要一个新的变量，通过一个groovy脚本语言即]]>
     </summary>

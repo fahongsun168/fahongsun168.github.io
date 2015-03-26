@@ -171,7 +171,7 @@
 
         <span class="type">Thread</span>.sleep(<span class="number">500</span>);
     }
-</code></pre><h2 id="Class对象不能被回收">Class<script>对象不能被回收</h2><pre><code>缓存<span class="keyword">Class</span>&lt;Script&gt;对象后，每次业务数据变更，业务上都需要生成新的<span class="keyword">Class</span>&lt;Script&gt;对象，perm区内存不能随着CMS GC回收掉老的<span class="keyword">Class</span>&lt;Script&gt;对象，随着多次发布，最终导致OOM问题
+</code></pre><h2 id="Class对象不能被回收">Class对象不能被回收</h2><pre><code>缓存<span class="keyword">Class</span>&lt;Script&gt;对象后，每次业务数据变更，业务上都需要生成新的<span class="keyword">Class</span>&lt;Script&gt;对象，perm区内存不能随着CMS GC回收掉老的<span class="keyword">Class</span>&lt;Script&gt;对象，随着多次发布，最终导致OOM问题
 问题原因：很可能每次在生成<span class="keyword">Class</span>&lt;Script&gt;对象时，使用了静态单例的GroovyClassLoader，这样由于老的<span class="keyword">Class</span>&lt;Script&gt;对象中的groovyClassLoader处于存活状态，导致所有不再使用的<span class="keyword">Class</span>&lt;Script&gt;对象均不能被GC 回收。
 解决方案：确保在每次更新缓存<span class="keyword">Class</span>&lt;Script&gt;对象时候，采用不同的groovyClassLoader，使老的<span class="keyword">Class</span>&lt;Script&gt;对象引用的groovyClassLoader也不在被引用。这样在CMS GC时，perm区这些<span class="keyword">Class</span>&lt;Script&gt;对象得以回收。
 
@@ -183,7 +183,7 @@
 </code></pre><h2 id="多次串行执行Groovy的性能问题">多次串行执行Groovy的性能问题</h2><pre><code>尽管缓存了<span class="keyword">Class</span>&lt;Script&gt;对象，如果一个线程中需要多次去执行多个<span class="keyword">Class</span>&lt;Script&gt;对象，还是存在perm区容量及运行性能瓶颈的问题。在支付宝风控系统模型平台中，一个模型的计算需要去执行<span class="number">600</span>个变量。此时如果采用每个变量都预先编译成单独的<span class="keyword">Class</span>&lt;Script&gt;对象，perm区大约会占用<span class="number">150</span>Mb的空间，运行这<span class="number">600</span>个变量的Groovy脚本总耗时为<span class="number">70</span>ms，很显然在perm区容量及运行性能方面都存在问题。
 
 解决方案：将多个Groovy脚本合并成一个脚本去编译和执行，当然要合理的构件合并的脚本逻辑。通过这种方法，编译这<span class="number">600</span>个变量只需要<span class="number">8</span>MB的空间，运行这<span class="number">600</span>个变量的Groovy脚本总耗时现将至<span class="number">18</span>ms。
-</code></pre></script></h2>
+</code></pre>
         
         
         <p class="article-more-link">
