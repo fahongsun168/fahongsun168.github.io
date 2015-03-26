@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-03-26T17:01:40.000Z</updated>
+  <updated>2015-03-26T17:14:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,36 +16,10 @@
   
   <entry>
     <title><![CDATA[groovy使用常见问题]]></title>
-    <link href="http://yoursite.com/2015/05/27/groovy_use/"/>
-    <id>http://yoursite.com/2015/05/27/groovy_use/</id>
-    <published>2015-05-26T16:35:12.000Z</published>
-    <updated>2015-03-26T17:01:40.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="背景介绍">背景介绍</h2><pre><code>通常为了满足业务的灵活性，多采用脚本语言来满足业务多变性和灵活性。在支付宝安全风控的系统中，模型变量的定义、数据的适配均采用groovy脚本语言来设计的，当BI同学需要一个新的变量，通过一个groovy脚本语言即可定义出来。虽然运用groovy脚本语言给业务带来了比较大的灵活性和可扩展性，但如果使用不当，会存在很多潜在的风险。
-
-支付宝风控系统中，使用groovy语言的过程如下:
-</code></pre><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Alipay.com Inc.</span><br><span class="line"> * Copyright (c) 2004-2013 All Rights Reserved.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">package</span> com.alipay.groovy.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> junit.framework.Assert;</span><br><span class="line"><span class="keyword">import</span> groovy.lang.Binding;</span><br><span class="line"><span class="keyword">import</span> groovy.lang.GroovyClassLoader;</span><br><span class="line"><span class="keyword">import</span> groovy.lang.Script;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * </span><br><span class="line"> * @author hongfa.sun</span><br><span class="line"> * @version $Id: RunGroovy.java, v 0.1 2013-4-27 下午07:01:46 hongfa.sun Exp $</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> RunGroovy &#123;</span><br><span class="line">    </span><br><span class="line">    @SuppressWarnings(<span class="string">"unchecked"</span>)</span><br><span class="line">    @Test</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> groovyDeamo() <span class="keyword">throws</span> InstantiationException, IllegalAccessException&#123;</span><br><span class="line">        StringBuffer groovyText = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        groovyText.<span class="keyword">append</span>(<span class="string">"def var1;n"</span>);</span><br><span class="line">        groovyText.<span class="keyword">append</span>(<span class="string">"if(isIPCrediable) var1 = true;n"</span>);</span><br><span class="line">        groovyText.<span class="keyword">append</span>(<span class="string">"else var1 = false;n"</span>);</span><br><span class="line"></span><br><span class="line">        GroovyClassLoader groovyLoader = <span class="keyword">new</span> GroovyClassLoader();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">Class</span>&lt;Script&gt; groovyClass = (<span class="keyword">Class</span>&lt;Script&gt;) groovyLoader.parseClass(groovyText.toString());</span><br><span class="line">        Script groovyScript = groovyClass.newInstance();</span><br><span class="line">        Binding binding = <span class="keyword">new</span> Binding();</span><br><span class="line">        binding.setVariable(<span class="string">"isIPCrediable"</span>, <span class="keyword">true</span>);</span><br><span class="line">        groovyScript.setBinding(binding);</span><br><span class="line">        </span><br><span class="line">        Object groovyResult = groovyScript.run();</span><br><span class="line">        Assert.assertTrue((<span class="keyword">Boolean</span>)groovyResult);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  其实java中调用groovy的核心代码就这几步，但其中有很多陷阱，下面分别一一表述。</p>
-<h2 id="使用问题">使用问题</h2><h3 id="JVM_perm区OOM">JVM perm区OOM</h3><pre><code>曾经我们的系统因为某个业务场景下用到了groovy，上线后系统很快就发生因为perm OOM导致crash了。最终查询出来原因如下：在该业务场景下，每次调用传入的都是GroovyText文本，返回GroovyText的执行结果，代码如下：
-</code></pre><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="function">Object <span class="title">exeGroovyText</span><span class="params">(String groovyText)</span> <span class="keyword">throws</span> InstantiationException, IllegalAccessException</span>&#123;</span><br><span class="line">    GroovyClassLoader groovyLoader = <span class="keyword">new</span> GroovyClassLoader();</span><br><span class="line"></span><br><span class="line">    Class&lt;Script&gt; groovyClass = (Class&lt;Script&gt;) groovyLoader.parseClass(groovyText.toString());</span><br><span class="line">    Script groovyScript = groovyClass.newInstance();</span><br><span class="line">    Binding binding = <span class="keyword">new</span> Binding();</span><br><span class="line">    binding.setVariable(<span class="string">"isIPCrediable"</span>, <span class="keyword">true</span>);</span><br><span class="line">    groovyScript.setBinding(binding);</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">return</span>  groovyScript.<span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="背景介绍">背景介绍</h2><pre><code>通常为了满足业务的灵活性，多采用脚本语言来满足业务多变性和灵活性。在支付宝安全风控的系统中，模型变量的定义、数据的适配均采用groovy脚本语言来设计的，当BI同学需要一个新的变量，通过一个groovy脚本语言即]]>
-    </summary>
-    
-      <category term="groovy" scheme="http://yoursite.com/tags/groovy/"/>
-    
-      <category term="问题" scheme="http://yoursite.com/tags/%E9%97%AE%E9%A2%98/"/>
-    
-      <category term="groovy" scheme="http://yoursite.com/categories/groovy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[groovy使用常见问题]]></title>
     <link href="http://yoursite.com/2015/05/27/groovy-use-warn-md/"/>
     <id>http://yoursite.com/2015/05/27/groovy-use-warn-md/</id>
     <published>2015-05-26T16:35:12.000Z</published>
-    <updated>2015-03-26T17:09:40.000Z</updated>
+    <updated>2015-03-26T17:14:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="背景介绍">背景介绍</h2><pre><code>通常为了满足业务的灵活性，多采用脚本语言来满足业务多变性和灵活性。在支付宝安全风控的系统中，模型变量的定义、数据的适配均采用groovy脚本语言来设计的，当BI同学需要一个新的变量，通过一个groovy脚本语言即可定义出来。虽然运用groovy脚本语言给业务带来了比较大的灵活性和可扩展性，但如果使用不当，会存在很多潜在的风险。
 
 支付宝风控系统中，使用groovy语言的过程如下:
@@ -69,66 +43,66 @@
 原因分析：缓存了Script对象后，在高并发的情况下，在执行赋值binding对象后，真正执行run操作时，拿到的binding对象可能是其它线程赋值的对象，所以出现数据计算混乱的情况。
 解决方案：不能缓存Script对象，而缓存Class&lt;Script&gt;，上面的程序如下修改就不会出现并发数据计算混乱的问题了。代码如下：
 </code></pre><pre><code>@<span class="type">SuppressWarnings</span>(<span class="string">"unchecked"</span>)
-    @<span class="type">Test</span>
-    public <span class="type">void</span> exeByScript() throws <span class="type">InstantiationException</span>, <span class="type">IllegalAccessException</span>,
-                             <span class="type">InterruptedException</span>, <span class="type">InstantiationException</span>, <span class="type">IllegalAccessException</span> {
-        <span class="type">StringBuffer</span> groovyText = new <span class="type">StringBuffer</span>();
-        groovyText.append(<span class="string">"def var1;\n"</span>);
-        groovyText.append(<span class="string">"if(isIPCrediable) var1 = true;\n"</span>);
-        groovyText.append(<span class="string">"else var1 = false;\n"</span>);
+@<span class="type">Test</span>
+public <span class="type">void</span> exeByScript() throws <span class="type">InstantiationException</span>, <span class="type">IllegalAccessException</span>,
+                         <span class="type">InterruptedException</span>, <span class="type">InstantiationException</span>, <span class="type">IllegalAccessException</span> {
+    <span class="type">StringBuffer</span> groovyText = new <span class="type">StringBuffer</span>();
+    groovyText.append(<span class="string">"def var1;\n"</span>);
+    groovyText.append(<span class="string">"if(isIPCrediable) var1 = true;\n"</span>);
+    groovyText.append(<span class="string">"else var1 = false;\n"</span>);
 
-        <span class="type">GroovyClassLoader</span> groovyLoader = new <span class="type">GroovyClassLoader</span>();
+    <span class="type">GroovyClassLoader</span> groovyLoader = new <span class="type">GroovyClassLoader</span>();
 
-        <span class="type">Class</span>&lt;<span class="type">Script</span>&gt; groovyClass = (<span class="type">Class</span>&lt;<span class="type">Script</span>&gt;) groovyLoader.parseClass(groovyText.toString());
-        exeByScript(groovyClass);
-    }
+    <span class="type">Class</span>&lt;<span class="type">Script</span>&gt; groovyClass = (<span class="type">Class</span>&lt;<span class="type">Script</span>&gt;) groovyLoader.parseClass(groovyText.toString());
+    exeByScript(groovyClass);
+}
 
-    public <span class="type">void</span> exeByScript(final <span class="type">Class</span>&lt;<span class="type">Script</span>&gt; groovyClass) throws <span class="type">InterruptedException</span> {
+public <span class="type">void</span> exeByScript(final <span class="type">Class</span>&lt;<span class="type">Script</span>&gt; groovyClass) throws <span class="type">InterruptedException</span> {
 
-        <span class="type">List</span>&lt;<span class="type">Thread</span>&gt; threadList = new <span class="type">ArrayList</span>&lt;<span class="type">Thread</span>&gt;();
-        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
-            <span class="type">Thread</span> t = new <span class="type">Thread</span>(new <span class="type">Runnable</span>() {
-                public <span class="type">void</span> run() {
-                    <span class="type">Script</span> groovyScript;
-                    <span class="keyword">try</span> {
-                        groovyScript = groovyClass.newInstance();
-                        <span class="type">Random</span> random = new <span class="type">Random</span>();
-                        boolean isIPCrediable = <span class="literal">false</span>;
+    <span class="type">List</span>&lt;<span class="type">Thread</span>&gt; threadList = new <span class="type">ArrayList</span>&lt;<span class="type">Thread</span>&gt;();
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+        <span class="type">Thread</span> t = new <span class="type">Thread</span>(new <span class="type">Runnable</span>() {
+            public <span class="type">void</span> run() {
+                <span class="type">Script</span> groovyScript;
+                <span class="keyword">try</span> {
+                    groovyScript = groovyClass.newInstance();
+                    <span class="type">Random</span> random = new <span class="type">Random</span>();
+                    boolean isIPCrediable = <span class="literal">false</span>;
 
-                        <span class="type">int</span> randomInt = random.nextInt(<span class="number">2</span>);
-                        <span class="keyword">if</span> (randomInt == <span class="number">0</span>) {
-                            isIPCrediable = <span class="literal">true</span>;
-                        } <span class="keyword">else</span> {
-                            isIPCrediable = <span class="literal">false</span>;
-                        }
-
-                        <span class="type">Binding</span> binding = new <span class="type">Binding</span>();
-                        binding.setVariable(<span class="string">"isIPCrediable"</span>, isIPCrediable);
-                        groovyScript.setBinding(binding);
-
-                        <span class="type">Object</span> <span class="literal">result</span> = groovyScript.run();
-
-                        <span class="keyword">if</span> (((<span class="type">Boolean</span>) <span class="literal">result</span>).booleanValue() != isIPCrediable) {
-                            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"线程ID:"</span> + <span class="type">Thread</span>.currentThread().getId() + <span class="string">":"</span>
-                                               + isIPCrediable + <span class="string">":="</span> + <span class="literal">result</span>);
-                        }
-
-                        <span class="type">Thread</span>.sleep(<span class="number">100</span>);
-                    } catch (<span class="type">InstantiationException</span> e1) {
-                    } catch (<span class="type">IllegalAccessException</span> e1) {
-                    } catch (<span class="type">InterruptedException</span> e) {
+                    <span class="type">int</span> randomInt = random.nextInt(<span class="number">2</span>);
+                    <span class="keyword">if</span> (randomInt == <span class="number">0</span>) {
+                        isIPCrediable = <span class="literal">true</span>;
+                    } <span class="keyword">else</span> {
+                        isIPCrediable = <span class="literal">false</span>;
                     }
+
+                    <span class="type">Binding</span> binding = new <span class="type">Binding</span>();
+                    binding.setVariable(<span class="string">"isIPCrediable"</span>, isIPCrediable);
+                    groovyScript.setBinding(binding);
+
+                    <span class="type">Object</span> <span class="literal">result</span> = groovyScript.run();
+
+                    <span class="keyword">if</span> (((<span class="type">Boolean</span>) <span class="literal">result</span>).booleanValue() != isIPCrediable) {
+                        <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"线程ID:"</span> + <span class="type">Thread</span>.currentThread().getId() + <span class="string">":"</span>
+                                           + isIPCrediable + <span class="string">":="</span> + <span class="literal">result</span>);
+                    }
+
+                    <span class="type">Thread</span>.sleep(<span class="number">100</span>);
+                } catch (<span class="type">InstantiationException</span> e1) {
+                } catch (<span class="type">IllegalAccessException</span> e1) {
+                } catch (<span class="type">InterruptedException</span> e) {
                 }
-            });
-            threadList.add(t);
-        }
-
-        <span class="keyword">for</span> (<span class="type">Thread</span> th : threadList) {
-            th.start();
-        }
-
-        <span class="type">Thread</span>.sleep(<span class="number">500</span>);
+            }
+        });
+        threadList.add(t);
     }
+
+    <span class="keyword">for</span> (<span class="type">Thread</span> th : threadList) {
+        th.start();
+    }
+
+    <span class="type">Thread</span>.sleep(<span class="number">500</span>);
+}
 </code></pre><h3 id="Class对象不能被回收">Class对象不能被回收</h3><pre><code>缓存<span class="keyword">Class</span>&lt;Script&gt;对象后，每次业务数据变更，业务上都需要生成新的<span class="keyword">Class</span>&lt;Script&gt;对象，perm区内存不能随着CMS GC回收掉老的<span class="keyword">Class</span>&lt;Script&gt;对象，随着多次发布，最终导致OOM问题
 问题原因：很可能每次在生成<span class="keyword">Class</span>&lt;Script&gt;对象时，使用了静态单例的GroovyClassLoader，这样由于老的<span class="keyword">Class</span>&lt;Script&gt;对象中的groovyClassLoader处于存活状态，导致所有不再使用的<span class="keyword">Class</span>&lt;Script&gt;对象均不能被GC 回收。
 解决方案：确保在每次更新缓存<span class="keyword">Class</span>&lt;Script&gt;对象时候，采用不同的groovyClassLoader，使老的<span class="keyword">Class</span>&lt;Script&gt;对象引用的groovyClassLoader也不在被引用。这样在CMS GC时，perm区这些<span class="keyword">Class</span>&lt;Script&gt;对象得以回收。
