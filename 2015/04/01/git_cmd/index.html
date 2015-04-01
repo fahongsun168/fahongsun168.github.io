@@ -109,11 +109,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="git常用命令">git常用命令</h3><ul>
+		<h2 id="git常用命令">git常用命令</h2><ul>
 <li>测试SSH公钥配置是否OK：<code>ssh git@gitlab.alibaba-inc.com</code></li>
 <li>下载某个项目：<code>git clone git@gitlab.alibaba-inc.com:hongfa.sun/document.git</code></li>
 <li>查看分支信息：<code>git branch -r</code></li>
@@ -125,6 +125,15 @@
 <li>查看远程仓库名：<code>git remote -v</code></li>
 <li>合并分支到master上：<code>git merge dev</code></li>
 <li>删除分支：<code>git branch -d dev</code></li>
+</ul>
+<h2 id="git分支命令">git分支命令</h2><ul>
+<li>查看分支：<code>git branch</code></li>
+<li>创建分支：<code>git branch &lt;name&gt;</code></li>
+<li>切换分支：<code>git checkout &lt;name&gt;</code></li>
+<li>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></li>
+<li>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></li>
+<li>删除分支：<code>git branch -d &lt;name&gt;</code></li>
+<li>强制删除分支： <code>git branch -D &lt;name&gt;</code></li>
 </ul>
   
 	</div>
@@ -188,7 +197,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li></ol>
  
   </div>
 

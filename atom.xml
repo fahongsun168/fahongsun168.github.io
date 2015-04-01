@@ -63,8 +63,8 @@
     <link href="http://yoursite.com/2015/04/01/git_cmd/"/>
     <id>http://yoursite.com/2015/04/01/git_cmd/</id>
     <published>2015-04-01T12:03:12.000Z</published>
-    <updated>2015-04-01T12:29:22.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="git常用命令">git常用命令</h3><ul>
+    <updated>2015-04-01T12:32:11.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="git常用命令">git常用命令</h2><ul>
 <li>测试SSH公钥配置是否OK：<code>ssh git@gitlab.alibaba-inc.com</code></li>
 <li>下载某个项目：<code>git clone git@gitlab.alibaba-inc.com:hongfa.sun/document.git</code></li>
 <li>查看分支信息：<code>git branch -r</code></li>
@@ -77,9 +77,18 @@
 <li>合并分支到master上：<code>git merge dev</code></li>
 <li>删除分支：<code>git branch -d dev</code></li>
 </ul>
+<h2 id="git分支命令">git分支命令</h2><ul>
+<li>查看分支：<code>git branch</code></li>
+<li>创建分支：<code>git branch &lt;name&gt;</code></li>
+<li>切换分支：<code>git checkout &lt;name&gt;</code></li>
+<li>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></li>
+<li>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></li>
+<li>删除分支：<code>git branch -d &lt;name&gt;</code></li>
+<li>强制删除分支： <code>git branch -D &lt;name&gt;</code></li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="git常用命令">git常用命令</h3><ul>
+    <![CDATA[<h2 id="git常用命令">git常用命令</h2><ul>
 <li>测试SSH公钥配置是否OK：<code>ssh git@gitlab.alibaba-inc.com</code></li>
 <li>下载某个项目：<code>git clone git@gitlab.a]]>
     </summary>
