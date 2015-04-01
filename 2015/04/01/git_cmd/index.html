@@ -109,7 +109,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag命令"><span class="toc-number">3.</span> <span class="toc-text">git tag命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash命令"><span class="toc-number">4.</span> <span class="toc-text">git stash命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git设置别名"><span class="toc-number">5.</span> <span class="toc-text">git设置别名</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag命令"><span class="toc-number">3.</span> <span class="toc-text">git tag命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash命令"><span class="toc-number">4.</span> <span class="toc-text">git stash命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_回滚"><span class="toc-number">5.</span> <span class="toc-text">git 回滚</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#commit之后回滚"><span class="toc-number">5.1.</span> <span class="toc-text">commit之后回滚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add之后回滚"><span class="toc-number">5.2.</span> <span class="toc-text">add之后回滚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add之后回滚-1"><span class="toc-number">5.3.</span> <span class="toc-text">add之后回滚</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git设置别名"><span class="toc-number">6.</span> <span class="toc-text">git设置别名</span></a></li></ol>
 		
 		</div>
 		
@@ -153,6 +153,21 @@
 <li>恢复现场：<code>git stash apply</code></li>
 <li>删除现场：<code>git stash drop</code></li>
 <li>删除并恢复：<code>git stash pop</code></li>
+</ul>
+<h2 id="git_回滚">git 回滚</h2><h3 id="commit之后回滚">commit之后回滚</h3><ul>
+<li>显示提交的log信息：<code>git log</code></li>
+<li>格式化提交的log信息：<code>git log --pretty=oneline</code></li>
+<li>回滚到前一版本：<code>git reset --hard HEAD^</code></li>
+<li>回滚到前n版本：<code>git reset --hard HEAD~100</code></li>
+<li>回滚到指定版本：<code>git reset --hard &lt;commit id&gt;</code></li>
+<li>回滚记录查看：<code>git reflog</code></li>
+</ul>
+<h3 id="add之后回滚">add之后回滚</h3><ul>
+<li>reset：<code>git reset HEAD file</code></li>
+<li>checkout：<code>git checkout -- file</code></li>
+</ul>
+<h3 id="add之后回滚-1">add之后回滚</h3><ul>
+<li>checkout：<code>git checkout -- file</code></li>
 </ul>
 <h2 id="git设置别名">git设置别名</h2><ul>
 <li>checkout：<code>git config --global alias.co checkout</code></li>
@@ -221,7 +236,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag命令"><span class="toc-number">3.</span> <span class="toc-text">git tag命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash命令"><span class="toc-number">4.</span> <span class="toc-text">git stash命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git设置别名"><span class="toc-number">5.</span> <span class="toc-text">git设置别名</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag命令"><span class="toc-number">3.</span> <span class="toc-text">git tag命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash命令"><span class="toc-number">4.</span> <span class="toc-text">git stash命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_回滚"><span class="toc-number">5.</span> <span class="toc-text">git 回滚</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#commit之后回滚"><span class="toc-number">5.1.</span> <span class="toc-text">commit之后回滚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add之后回滚"><span class="toc-number">5.2.</span> <span class="toc-text">add之后回滚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add之后回滚-1"><span class="toc-number">5.3.</span> <span class="toc-text">add之后回滚</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git设置别名"><span class="toc-number">6.</span> <span class="toc-text">git设置别名</span></a></li></ol>
  
   </div>
 
