@@ -109,7 +109,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag命令"><span class="toc-number">3.</span> <span class="toc-text">git tag命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash命令"><span class="toc-number">4.</span> <span class="toc-text">git stash命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git设置别名"><span class="toc-number">5.</span> <span class="toc-text">git设置别名</span></a></li></ol>
 		
 		</div>
 		
@@ -134,6 +134,30 @@
 <li>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></li>
 <li>删除分支：<code>git branch -d &lt;name&gt;</code></li>
 <li>强制删除分支： <code>git branch -D &lt;name&gt;</code></li>
+</ul>
+<h2 id="git_tag命令">git tag命令</h2><ul>
+<li>创建tag：<code>git tag &lt;tagName&gt;</code></li>
+<li>在某个提交之前创建tag： <code>git tag &lt;tagName&gt; &lt;commitId&gt;</code></li>
+<li>创建带注释的tag：<code>git tag -a &lt;tagName&gt; -m &quot;commit&quot; &lt;commitId&gt;</code></li>
+<li>查看tag：<code>git tag</code></li>
+<li>查看注释： <code>git show &lt;tagName&gt;</code></li>
+<li>删除tag：<code>git tag -d &lt;tagName&gt;</code></li>
+<li>推送tag到中央服务器：<code>git push origin &lt;tagName&gt;</code></li>
+<li>一次性推送所有tag到中央服务器：<code>git push origin --tags</code></li>
+<li>删除已经推送到中央服务器的tag：<code>git tag -d &lt;tagName&gt;</code></li>
+<li>删除已经推送到中央服务器的tag：<code>git push origin :refs/tags/&lt;tagName&gt;</code></li>
+</ul>
+<h2 id="git_stash命令">git stash命令</h2><ul>
+<li>储存未提交的分值(多分支切换的时候用到)：<code>git stash</code></li>
+<li>查看工作现场：<code>git stash list</code></li>
+<li>恢复现场：<code>git stash apply</code></li>
+<li>删除现场：<code>git stash drop</code></li>
+<li>删除并恢复：<code>git stash pop</code></li>
+</ul>
+<h2 id="git设置别名">git设置别名</h2><ul>
+<li>checkout：<code>git config --global alias.co checkout</code></li>
+<li>commit：<code>git config --global alias.ci commit</code></li>
+<li>branch：<code>git config --global alias.br branch</code></li>
 </ul>
   
 	</div>
@@ -197,7 +221,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git分支命令"><span class="toc-number">2.</span> <span class="toc-text">git分支命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag命令"><span class="toc-number">3.</span> <span class="toc-text">git tag命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash命令"><span class="toc-number">4.</span> <span class="toc-text">git stash命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git设置别名"><span class="toc-number">5.</span> <span class="toc-text">git设置别名</span></a></li></ol>
  
   </div>
 

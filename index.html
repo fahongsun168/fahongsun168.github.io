@@ -199,6 +199,30 @@
 <li>删除分支：<code>git branch -d &lt;name&gt;</code></li>
 <li>强制删除分支： <code>git branch -D &lt;name&gt;</code></li>
 </ul>
+<h2 id="git_tag命令">git tag命令</h2><ul>
+<li>创建tag：<code>git tag &lt;tagName&gt;</code></li>
+<li>在某个提交之前创建tag： <code>git tag &lt;tagName&gt; &lt;commitId&gt;</code></li>
+<li>创建带注释的tag：<code>git tag -a &lt;tagName&gt; -m &quot;commit&quot; &lt;commitId&gt;</code></li>
+<li>查看tag：<code>git tag</code></li>
+<li>查看注释： <code>git show &lt;tagName&gt;</code></li>
+<li>删除tag：<code>git tag -d &lt;tagName&gt;</code></li>
+<li>推送tag到中央服务器：<code>git push origin &lt;tagName&gt;</code></li>
+<li>一次性推送所有tag到中央服务器：<code>git push origin --tags</code></li>
+<li>删除已经推送到中央服务器的tag：<code>git tag -d &lt;tagName&gt;</code></li>
+<li>删除已经推送到中央服务器的tag：<code>git push origin :refs/tags/&lt;tagName&gt;</code></li>
+</ul>
+<h2 id="git_stash命令">git stash命令</h2><ul>
+<li>储存未提交的分值(多分支切换的时候用到)：<code>git stash</code></li>
+<li>查看工作现场：<code>git stash list</code></li>
+<li>恢复现场：<code>git stash apply</code></li>
+<li>删除现场：<code>git stash drop</code></li>
+<li>删除并恢复：<code>git stash pop</code></li>
+</ul>
+<h2 id="git设置别名">git设置别名</h2><ul>
+<li>checkout：<code>git config --global alias.co checkout</code></li>
+<li>commit：<code>git config --global alias.ci commit</code></li>
+<li>branch：<code>git config --global alias.br branch</code></li>
+</ul>
 
         
         
