@@ -63,9 +63,9 @@
     <link href="http://yoursite.com/2015/04/01/git_cmd/"/>
     <id>http://yoursite.com/2015/04/01/git_cmd/</id>
     <published>2015-04-01T12:03:12.000Z</published>
-    <updated>2015-04-01T12:19:07.000Z</updated>
+    <updated>2015-04-01T12:27:54.000Z</updated>
     <content type="html"><![CDATA[<h3 id="git常用命令">git常用命令</h3><ul>
-<li>测试SSH公钥配置是否OK： <code>ssh git@gitlab.alibaba-inc.com</code></li>
+<li>测试SSH公钥配置是否OK <code>ssh git@gitlab.alibaba-inc.com</code></li>
 <li>下载某个项目：git clone git@gitlab.alibaba-inc.com:hongfa.sun/document.git</li>
 <li>查看分支信息：git branch -r</li>
 <li>切换分支：git checkout -b daily/2.0.0 origin/daily/2.0.0</li>
@@ -80,8 +80,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="git常用命令">git常用命令</h3><ul>
-<li>测试SSH公钥配置是否OK： <code>ssh git@gitlab.alibaba-inc.com</code></li>
-<li>下载某个项目：git clone git@gitlab.alibab]]>
+<li>测试SSH公钥配置是否OK <code>ssh git@gitlab.alibaba-inc.com</code></li>
+<li>下载某个项目：git clone git@gitlab.alibaba]]>
     </summary>
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
