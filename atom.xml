@@ -60,10 +60,34 @@
   
   <entry>
     <title><![CDATA[git命令]]></title>
+    <link href="http://yoursite.com/2015/04/01/gitignogtire/"/>
+    <id>http://yoursite.com/2015/04/01/gitignogtire/</id>
+    <published>2015-04-01T13:22:12.000Z</published>
+    <updated>2015-04-01T13:24:02.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="设置全局gitignogtire">设置全局gitignogtire</h2><ul>
+<li>linux：<code>git config --global core.excludesfile &#39;~/.gitignogtire&#39;</code></li>
+<li>windows：<code>git config --global core.excludesfile &quot;%USERPROFILE%\.gitignore&quot;</code></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="设置全局gitignogtire">设置全局gitignogtire</h2><ul>
+<li>linux：<code>git config --global core.excludesfile &#39;~/.gitignogtire&#39;</code></]]>
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="常用命令" scheme="http://yoursite.com/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git命令]]></title>
     <link href="http://yoursite.com/2015/04/01/git_cmd/"/>
     <id>http://yoursite.com/2015/04/01/git_cmd/</id>
     <published>2015-04-01T12:03:12.000Z</published>
-    <updated>2015-04-01T12:57:35.000Z</updated>
+    <updated>2015-04-01T13:24:25.000Z</updated>
     <content type="html"><![CDATA[<h2 id="git常用命令">git常用命令</h2><ul>
 <li>测试SSH公钥配置是否OK：<code>ssh git@gitlab.alibaba-inc.com</code></li>
 <li>下载某个项目：<code>git clone git@gitlab.alibaba-inc.com:hongfa.sun/document.git</code></li>
@@ -134,9 +158,9 @@
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
-      <category term="命令" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4/"/>
+      <category term="常用命令" scheme="http://yoursite.com/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
-      <category term="常用命令" scheme="http://yoursite.com/categories/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
     
   </entry>
   
@@ -167,7 +191,7 @@
     <link href="http://yoursite.com/2014/05/07/linux_cmd/"/>
     <id>http://yoursite.com/2014/05/07/linux_cmd/</id>
     <published>2014-05-07T10:44:12.000Z</published>
-    <updated>2015-04-01T13:15:59.000Z</updated>
+    <updated>2015-04-01T13:24:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="grep命令">grep命令</h2><h3 id="求交集命令">求交集命令</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
 <h3 id="求差集命令">求差集命令</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -F -v -f a1.txt a2.txt | <span class="keyword">sort</span> | uniq</span><br></pre></td></tr></table></figure>
 <h3 id="去重命令">去重命令</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> <span class="string">'test'</span> test.<span class="keyword">log</span> | <span class="keyword">sort</span> -rn | uniq</span><br></pre></td></tr></table></figure>
@@ -183,9 +207,9 @@
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
-      <category term="命令" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4/"/>
+      <category term="常用命令" scheme="http://yoursite.com/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
-      <category term="常用命令" scheme="http://yoursite.com/categories/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
     
   </entry>
   
